@@ -10,7 +10,7 @@ fun main() {
     val possibleSpelledDigits = listOf("one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
     val digitsValueLookupTable: Map<String, Int> =
         possibleSpelledDigits.mapIndexed { index, spelledDigit -> spelledDigit to (index + 1) }.toMap() +
-                (0..9).associateBy { it.toString() }
+                (1..9).associateBy { it.toString() }
 
     fun part2(input: List<String>): Int = input.map { line ->
         val (_, firstDigit) = requireNotNull(line.findAnyOf(digitsValueLookupTable.keys))
